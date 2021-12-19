@@ -1,5 +1,8 @@
-﻿namespace Persistence;
-public class Class1
-{
+﻿using System;
 
+namespace Persistence
+{
+    public class Class1
+    {
+    }
 }
