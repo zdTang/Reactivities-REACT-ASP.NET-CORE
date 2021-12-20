@@ -19,3 +19,8 @@ Complicated to use typescripts and now it's much improved and it's much more ple
 
 # CORS policy
 as the Server and the Client comes from different URL
+
+# Semantic - ui
+not this one: https://semantic-ui.com/
+this one: https://react.semantic-ui.com/usage
+
