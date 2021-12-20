@@ -10,3 +10,5 @@ https://dotnettutorials.net/lesson/repository-design-pattern-csharp/
 
 need to install microsoft.entityframework.design package first
 When run "dotnet ef" command, I am in the root folder
+
+## changed gitignore. to prevent syn "appsettings.json" file. but don't know it works. For security, we should not push "appsettings.json" file to the Git repository.
