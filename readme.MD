@@ -60,3 +60,8 @@ use Mapper
 
 create class extension.
 this is an good demo to use extension.
+
+# 4-12 - Cancellation tokens
+
+watch his tutorial again if using cancellation token is necessary.
+It seems the cancellation token is used when Client cancel the request.
