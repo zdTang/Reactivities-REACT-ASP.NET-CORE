@@ -48,3 +48,10 @@ Understand how to assess Services via Http.context
 # 4-7 - Adding a Create handler
 
 Create a "create" Handler, understand how those Asynchronous operations.
+
+# 4-9 - Adding AutoMapper
+
+Install autoMapper,
+Dependency Injection to Services
+Creating Mapping profile
+use Mapper
