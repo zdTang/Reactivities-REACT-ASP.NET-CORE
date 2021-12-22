@@ -39,3 +39,8 @@ Before, our Api controller depends on "dbContext", By now, the "Mediator" depend
 and Api controller depends on "Mediator"  
 About mediator design pattern, see here:  
 https://www.dofactory.com/net/mediator-design-pattern
+
+# 4-5 - Thin controllers in the API
+
+Move DI operation into the Base class. understand how inherit works.  
+Understand how to assess Services via Http.context
