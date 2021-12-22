@@ -55,3 +55,8 @@ Install autoMapper,
 Dependency Injection to Services
 Creating Mapping profile
 use Mapper
+
+# 4-11 - Startup class housekeeping
+
+create class extension.
+this is an good demo to use extension.
