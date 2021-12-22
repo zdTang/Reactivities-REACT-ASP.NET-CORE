@@ -30,3 +30,12 @@ this one: https://react.semantic-ui.com/usage
 
 CQRS stands for Command and Query Responsibility Segregation  
 Read this: https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs
+
+# 4-4 Creating our first Query handler
+
+using a third party library called "MediatoR"  
+https://github.com/jbogard/MediatR  
+Before, our Api controller depends on "dbContext", By now, the "Mediator" depends on "dbContext"  
+and Api controller depends on "Mediator"  
+About mediator design pattern, see here:  
+https://www.dofactory.com/net/mediator-design-pattern
