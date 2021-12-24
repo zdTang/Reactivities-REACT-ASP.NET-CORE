@@ -1,13 +1,18 @@
 import React from "react";
-import {Item,Segment } from "semantic-ui-react";
+import { Item, Segment } from "semantic-ui-react";
 import { Activity } from "../../../app/models/activity";
 
 interface Props {
   activities: Activity[];
   selectActivity: (id: string) => void;
+  deleteActivity: (id: string) => void;
 }
 
-export default function ActivityList({ activities, selectActivity }: Props) {
+export default function ActivityList({
+  activities,
+  selectActivity,
+  deleteActivity,
+}: Props) {
   return (
     <Segment>
       <Item.Group divided>
@@ -25,8 +30,14 @@ export default function ActivityList({ activities, selectActivity }: Props) {
               <Item.Extra>
                 {/* <Button floated="right" content="View" color="blue"></Button> */}
                 <button
+                  style={{ float: "right", color: "red" }}
+                  onClick={() => deleteActivity(activity.id)}
+                >
+                  Delete
+                </button>
+                <button
                   style={{ float: "right", color: "blue" }}
-                  onClick={()=>selectActivity(activity.id)}
+                  onClick={() => selectActivity(activity.id)}
                 >
                   View
                 </button>

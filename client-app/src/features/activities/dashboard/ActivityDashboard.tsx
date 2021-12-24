@@ -13,6 +13,7 @@ interface Props {
   openForm: (id: string) => void;
   closeForm: () => void;
   createOrEdit:(activity:Activity)=>void;
+  deleteActivity:(id:string)=>void;
 }
 
 const ActivityDashboard = ({
@@ -24,6 +25,7 @@ const ActivityDashboard = ({
   openForm,
   closeForm,
   createOrEdit,
+  deleteActivity,
 }: Props) => {
   return (
     <div>
@@ -32,6 +34,7 @@ const ActivityDashboard = ({
           <ActivityList
             activities={activities}
             selectActivity={selectActivity}
+            deleteActivity={deleteActivity}
           />
         </Grid.Column>
         <Grid.Column width="6">

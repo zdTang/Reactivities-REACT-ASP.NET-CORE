@@ -66,7 +66,7 @@ function App() {
           openForm={handleFormOpen}
           closeForm={handleFormClose}
           createOrEdit={handleCreateOrEditActivity}
-
+          deleteActivity={handleDeleteActivity}
         />
       </Container>
     </>
