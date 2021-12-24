@@ -79,3 +79,8 @@ can implement Max's approach
 
 Learn how to use interface. and how to use semantic React UI components.  
 As I did before, I replaced Button component with native "button"
+
+# 5-8 - Creating a details view
+
+the Button component still causes Error even after I updated it to the latest version.
+will fix this issue after finished this tutorial
