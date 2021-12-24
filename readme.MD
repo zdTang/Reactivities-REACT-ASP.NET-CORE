@@ -84,3 +84,8 @@ As I did before, I replaced Button component with native "button"
 
 the Button component still causes Error even after I updated it to the latest version.
 will fix this issue after finished this tutorial
+
+# 5-9 - Creating an Activity form
+
+add a form, without wire up any logic.  
+
