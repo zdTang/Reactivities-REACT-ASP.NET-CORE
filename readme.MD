@@ -74,3 +74,8 @@ for any Json, can go to website of "json to ts" to generate interface automatica
 
 Add style to component. Semantic ui is not very good, because they are not updated.  
 can implement Max's approach
+
+# 5- 7 - Creating an activity list
+
+Learn how to use interface. and how to use semantic React UI components.  
+As I did before, I replaced Button component with native "button"
