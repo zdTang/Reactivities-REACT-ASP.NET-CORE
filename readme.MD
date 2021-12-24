@@ -65,3 +65,7 @@ this is an good demo to use extension.
 
 watch his tutorial again if using cancellation token is necessary.
 It seems the cancellation token is used when Client cancel the request.
+
+# 5-3 - Adding an Activity interface
+
+for any Json, can go to website of "json to ts" to generate interface automatically.
