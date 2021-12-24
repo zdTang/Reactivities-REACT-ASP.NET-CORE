@@ -94,3 +94,7 @@ add a form, without wire up any logic.
 wire up single activity  
 be care of prop interface  
 will use useContext to do this section as it pass props through multiple components.
+
+# 6-2 - Setting up axios
+
+notice how to use axios and promise
