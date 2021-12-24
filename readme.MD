@@ -87,5 +87,10 @@ will fix this issue after finished this tutorial
 
 # 5-9 - Creating an Activity form
 
-add a form, without wire up any logic.  
+add a form, without wire up any logic.
 
+# 5-10 - Selecting an activity to view
+
+wire up single activity  
+be care of prop interface  
+will use useContext to do this section as it pass props through multiple components.
