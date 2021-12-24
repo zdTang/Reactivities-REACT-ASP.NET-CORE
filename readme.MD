@@ -69,3 +69,8 @@ It seems the cancellation token is used when Client cancel the request.
 # 5-3 - Adding an Activity interface
 
 for any Json, can go to website of "json to ts" to generate interface automatically.
+
+# 5-5 - Adding some style to the nav bar
+
+Add style to component. Semantic ui is not very good, because they are not updated.  
+can implement Max's approach
