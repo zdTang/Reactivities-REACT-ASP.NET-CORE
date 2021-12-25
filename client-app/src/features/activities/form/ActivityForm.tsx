@@ -1,9 +1,9 @@
+import { observer } from "mobx-react-lite";
 import { ChangeEvent, useState } from "react";
 import { Button, Form, Segment } from "semantic-ui-react";
-import { Activity } from "../../../app/models/activity";
 import { useStore } from "../../../app/stores/store";
 
-export default function ActivityForm() {
+function ActivityForm() {
   const { activityStore } = useStore();
   const {
     selectedActivity,
@@ -92,3 +92,5 @@ export default function ActivityForm() {
     </Segment>
   );
 }
+
+export default observer(ActivityForm);
