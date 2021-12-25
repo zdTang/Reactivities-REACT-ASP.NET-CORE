@@ -8,13 +8,12 @@ import { store, StoreContext } from "./app/stores/store";
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <StoreContext.Provider value={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </StoreContext.Provider>
-  </React.StrictMode>,
+  <StoreContext.Provider value={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StoreContext.Provider>,
+
   document.getElementById("root")
 );
 
