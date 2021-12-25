@@ -98,3 +98,6 @@ will use useContext to do this section as it pass props through multiple compone
 # 6-2 - Setting up axios
 
 notice how to use axios and promise
+
+# 7-6 - MobX strict mode
+https://mobx.js.org/actions.html
