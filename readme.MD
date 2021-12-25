@@ -105,3 +105,10 @@ https://mobx.js.org/actions.html
 # 7-10 - Using a Javascript map object to store the activities
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+
+
+
+# 8-3 - Adding routes.mp4
+
+## "exact" key word to match 
+<Route exact path="/" component={HomePage} />
