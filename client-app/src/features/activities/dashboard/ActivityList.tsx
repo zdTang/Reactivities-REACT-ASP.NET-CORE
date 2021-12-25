@@ -6,13 +6,12 @@ interface Props {
 
 
   deleteActivity: (id: string) => void;
-  submitting: boolean;
+
 }
 
 export default function ActivityList({
 
   deleteActivity,
-  submitting,
 }: Props) {
   const [target, setTarget] = useState("");
 
@@ -25,6 +24,7 @@ export default function ActivityList({
   }
   
   const {activityStore}=useStore();
+  const { loading } = activityStore;
 
   return (
     <Segment>
@@ -49,7 +49,7 @@ export default function ActivityList({
                 />
                 <Button
                   name={activity.id}
-                  loading={submitting && target === activity.id}
+                  loading={loading && target === activity.id}
                   onClick={(e) => handleActivityDelete(e, activity.id)}
                   floated="right"
                   content="Delete"
