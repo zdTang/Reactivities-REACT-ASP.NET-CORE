@@ -1,10 +1,9 @@
 import React from "react";
-import { Container, Menu } from "semantic-ui-react";
+import { Button, Container, Menu } from "semantic-ui-react";
 import { useStore } from "../stores/store";
 
-
 export default function NavBar() {
-  const {activityStore}=useStore();
+  const { activityStore } = useStore();
   return (
     <Menu inverted fixed="top">
       <Container>
@@ -20,7 +19,9 @@ export default function NavBar() {
         <Menu.Item>
           {/* <Button positive content="Create Activity" /> */}
           {/* the button cause Error at the Browser */}
-          <button onClick={()=>activityStore.openForm()}>Create Activity</button>
+          <Button onClick={() => activityStore.openForm()} color="blue">
+            Create Activity
+          </Button>
         </Menu.Item>
       </Container>
     </Menu>
