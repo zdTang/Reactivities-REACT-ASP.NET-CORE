@@ -5,6 +5,7 @@ import { observer } from "mobx-react-lite";
 import HomePage from "../../features/home/HomePage";
 import { Route } from "react-router-dom";
 import ActivityForm from "../../features/activities/form/ActivityForm";
+import ActivityDetails from "../../features/activities/details/ActivityDetails";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         {/* which one match the URL, will display this component */}
         {/* use "exact" key word to match strictly */}
         <Route exact path="/" component={HomePage} />
-        <Route path="/activities" component={ActivityDashboard} />
+        <Route exact path="/activities" component={ActivityDashboard} />
+        <Route path="/activities/:id" component={ActivityDetails} />
         <Route path="/createActivity" component={ActivityForm} />
         {/* <ActivityDashboard /> */}
       </Container>
