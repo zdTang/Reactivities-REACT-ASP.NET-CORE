@@ -101,3 +101,7 @@ notice how to use axios and promise
 
 # 7-6 - MobX strict mode
 https://mobx.js.org/actions.html
+
+# 7-10 - Using a Javascript map object to store the activities
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
