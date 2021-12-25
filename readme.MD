@@ -112,3 +112,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 ## "exact" key word to match 
 <Route exact path="/" component={HomePage} />
+
+# 8-4 - Adding nav links
+
+Notice how use NavLink to replace a Button click Event
