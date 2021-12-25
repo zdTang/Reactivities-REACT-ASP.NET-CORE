@@ -8,8 +8,6 @@ export default function ActivityDetails() {
   const {activityStore}=useStore();
   const {
     selectedActivity: activity,
-    openForm,
-    cancelSelectedActivity,
   } = activityStore;
   if(!activity) return <LoadingComponent />;
   return (
@@ -25,13 +23,11 @@ export default function ActivityDetails() {
 
       <Button.Group widths="2">
         <Button
-          onClick={() => openForm(activity.id)}
           basic
           color="blue"
           content="Edit"
         />
         <Button
-          onClick={cancelSelectedActivity}
           basic
           color="grey"
           content="Cancel"

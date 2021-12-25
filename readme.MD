@@ -115,4 +115,11 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 # 8-4 - Adding nav links
 
-Notice how use NavLink to replace a Button click Event
+Notice how use NavLink to replace a Button click Event  
+At this moment, the single Activity cannot be loaded properly.
+
+# 6 - Getting an individual activity
+
+To display a single activity, first,check if it is in the Memory. then use AXIOS to fetch it from Server  
+As we use Route to display Components, so that some Click Event which was used to toggle View's display can be removed  
+At this moment, the single Activity cannot be loaded properly.
