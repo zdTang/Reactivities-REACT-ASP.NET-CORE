@@ -24,6 +24,7 @@ export default class ActivityStore {
   }
 
   loadActivities = async () => {
+    this.loadingInitial = true;
     try {
       const activities = await agent.Activities.list();
       activities.forEach((activity) => {
@@ -41,7 +42,6 @@ export default class ActivityStore {
     this.loadingInitial = state;
   };
 
-  
   createActivity = async (activity: Activity) => {
     this.loading = true;
     activity.id = uuid();
