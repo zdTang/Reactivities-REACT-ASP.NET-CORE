@@ -19,6 +19,7 @@ function ActivityDetails() {
   }, [id, loadActivity]);
 
   if (loadingInitial || !activity) return <LoadingComponent />;
+
   return (
     <Card fluid>
       <Image src={`/assets/categoryImages/${activity.category}.jpg`} />
@@ -29,25 +30,25 @@ function ActivityDetails() {
         </Card.Meta>
         <Card.Description>{activity.description}</Card.Description>
       </Card.Content>
-
-      <Button.Group widths="2">
-        <Button
-          as={Link}
-          to={`/manage/${activity.id}`}
-          basic
-          color="blue"
-          content="Edit"
-        />
-        <Button
-          as={Link}
-          to="./activities"
-          basic
-          color="grey"
-          content="Cancel"
-        />
-      </Button.Group>
+      <Card.Content extra>
+        <Button.Group widths="2">
+          <Button
+            as={Link}
+            to={`/manage/${activity.id}`}
+            basic
+            color="blue"
+            content="Edit"
+          />
+          <Button
+            as={Link}
+            to="/activities"
+            basic
+            color="grey"
+            content="Cancel"
+          />
+        </Button.Group>
+      </Card.Content>
     </Card>
   );
 }
-
 export default observer(ActivityDetails);

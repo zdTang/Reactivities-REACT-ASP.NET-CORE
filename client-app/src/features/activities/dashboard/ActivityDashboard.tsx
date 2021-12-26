@@ -7,13 +7,15 @@ import ActivityList from "./ActivityList";
 
 function ActivityDashboard() {
   const { activityStore } = useStore();
+  const { loadActivities, activityRegistry } = activityStore;
 
   useEffect(() => {
-    activityStore.loadActivities();
-  }, [activityStore]);
+    if (activityRegistry.size <= 1) loadActivities();
+  }, [activityRegistry.size, loadActivities]);
 
   if (activityStore.loadingInitial)
     return <LoadingComponent content="Loading app" />;
+
   return (
     <Grid>
       <Grid.Column width="10">
