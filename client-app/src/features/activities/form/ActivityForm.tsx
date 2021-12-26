@@ -1,13 +1,21 @@
 import { observer } from "mobx-react-lite";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Button, Form, Segment } from "semantic-ui-react";
+import LoadingComponent from "../../../app/layout/LoadingComponent";
 import { useStore } from "../../../app/stores/store";
 
 function ActivityForm() {
   const { activityStore } = useStore();
-  const { selectedActivity, loading, createActivity, updateActivity } =
-    activityStore;
-  const initialState = selectedActivity ?? {
+  const {
+    loading,
+    createActivity,
+    updateActivity,
+    loadActivity,
+    loadingInitial,
+  } = activityStore;
+  const { id } = useParams<{ id: string }>();
+  const [activity, setActivity] = useState({
     id: "",
     title: "",
     category: "",
@@ -15,9 +23,11 @@ function ActivityForm() {
     date: "",
     city: "",
     venue: "",
-  };
+  });
 
-  const [activity, setActivity] = useState(initialState);
+  useEffect(() => {
+    if (id) loadActivity(id).then((activity) => setActivity(activity!));
+  }, [id, loadActivity]);
 
   function handleSubmit() {
     activity.id ? updateActivity(activity) : createActivity(activity);
@@ -29,7 +39,7 @@ function ActivityForm() {
     const { name, value } = event.target;
     setActivity({ ...activity, [name]: value }); // use new property to cover old value
   }
-
+  if (loadingInitial) return <LoadingComponent content="Loading activity..." />;
   return (
     <Segment clearing>
       <Form onSubmit={handleSubmit} autoComplete="off">

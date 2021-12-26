@@ -118,8 +118,12 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 Notice how use NavLink to replace a Button click Event  
 At this moment, the single Activity cannot be loaded properly.
 
-# 6 - Getting an individual activity
+# 8-6 - Getting an individual activity
 
 To display a single activity, first,check if it is in the Memory. then use AXIOS to fetch it from Server  
 As we use Route to display Components, so that some Click Event which was used to toggle View's display can be removed  
 At this moment, the single Activity cannot be loaded properly.
+
+# 8-8 - Adding the edit activity route
+
+concel button doesn't work, looks like the route is not correct.
