@@ -127,3 +127,6 @@ At this moment, the single Activity cannot be loaded properly.
 # 8-8 - Adding the edit activity route
 
 concel button doesn't work, looks like the route is not correct.
+# 9-7 - Adding the activity filter component
+
+for the original calendar's style, it doesn't fit our output. so that we can find its style's class name, and create another same-name class style to overwritten partial of its original style, such as width.
