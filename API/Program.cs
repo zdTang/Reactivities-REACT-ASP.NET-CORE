@@ -13,7 +13,7 @@ namespace API
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public async static Task Main(string[] args)
         {
             var Host = CreateHostBuilder(args).Build();
             /*============================
@@ -25,7 +25,9 @@ namespace API
             {
                 // check if can create a Db initializer like "aspNetCore Rocky project"
                 var context = services.GetRequiredService<DataContext>();
-                context.Database.Migrate();
+                //context.Database.Migrate();
+                await context.Database.MigrateAsync();
+                await Seed.SeedData(context);
             }
             catch (Exception ex)
             {
@@ -33,7 +35,8 @@ namespace API
                 logger.LogError(ex, "An error occurred during migration");
             }
 
-            Host.Run();
+            //Host.Run();
+            await Host.RunAsync();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

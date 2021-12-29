@@ -9,3 +9,8 @@
 
 this project put code at the Startup.cs, I don't think it is good enough.
 the Rocky project looks better.
+
+# the Location of SQLITE database
+
+Notice the location of SQLITE database
+Seeding database.
