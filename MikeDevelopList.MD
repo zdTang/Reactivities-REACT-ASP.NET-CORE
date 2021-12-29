@@ -14,3 +14,26 @@ the Rocky project looks better.
 
 Notice the location of SQLITE database
 Seeding database.
+
+# CORS policy
+
+https://stackoverflow.com/questions/62933791/why-web-api-not-giving-the-cors-error-in-browsers-like-chrome-and-edge-and-in-th
+
+# MEDIATOR pattern
+all classes only depends on mediator other than other cless.  
+A good example is Airport communication tower  
+https://www.programmingwithwolfgang.com/mediator-pattern-in-asp-net-core-3-1/
+
+# Marker interface
+In the class: List, they used  Empty interface  
+
+https://stackoverflow.com/questions/7552677/are-empty-interfaces-code-smell  
+https://stackoverflow.com/questions/1023068/what-is-the-purpose-of-a-marker-interface  
+https://stackoverflow.com/questions/55761661/what-is-an-empty-interface-used-for/55761700
+
+# In in Generic 
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/in-generic-modifier
+
+does this article make sense: https://agirlamonggeeks.com/2019/05/29/vs-in-generic-interfaces-contravariance-vs-covariance-the-easier-part-1/
+ 

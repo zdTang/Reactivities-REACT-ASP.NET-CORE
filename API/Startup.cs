@@ -32,7 +32,7 @@ namespace API
             });
             services.ConfigureCors();
             // Inject MediatR
-            services.AddMediatR(typeof(ListMediater.Handler).Assembly);
+            services.AddMediatR(typeof(ListMediator.Handler).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
