@@ -40,3 +40,9 @@ does this article make sense: https://agirlamonggeeks.com/2019/05/29/vs-in-gener
 # Mediator
 
 As in the BaseApiController, we have no way to inject the class, so that we use "httpContext" to access the Service 
+
+# Mediator
+
+Notice those Handler, some are "query", some are "Command"
+Mediator sometimes Send a Query, sometimes Send a Command
+Understand CQRS pattern !
