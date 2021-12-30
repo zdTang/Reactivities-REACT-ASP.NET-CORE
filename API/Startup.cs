@@ -32,7 +32,11 @@ namespace API
             });
             services.ConfigureCors();
             // Inject MediatR
-            services.AddMediatR(typeof(ListMediator.Handler).Assembly);
+            // Here, the AddMediatR() need to be pass a Module, so that we can use type to find it.
+            // We can use either Handler to retrive the Assembly
+            // Either of the following approach works properly.
+            services.AddMediatR(typeof(ListActivity.Handler).Assembly);
+            //services.AddMediatR(typeof(Details.Handler).Assembly);   // works too
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

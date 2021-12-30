@@ -18,13 +18,13 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Activity>>> GetActivities()
         {
-            return await Mediator.Send(new ListMediator.Query());
+            return await Mediator.Send(new ListActivity.Query());
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Activity>> GetActivity(Guid id)
         {
-            return Ok();
+            return await Mediator.Send(new Details.Query { Id = id });
         }
     }
 }

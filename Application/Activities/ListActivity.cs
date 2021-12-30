@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.Activities
 {
-    public class ListMediator
+    public class ListActivity
     {
         public class Query : IRequest<List<Activity>> { }  // A Marker Interface
 
