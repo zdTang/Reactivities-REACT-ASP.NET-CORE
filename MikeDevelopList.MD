@@ -60,3 +60,10 @@ In the Controllor, we just "Send" a Query or Command, the Handler we defined wil
 # IServiceCollection 
 
 For those extension method, Is it necessary to return IServiceCollection ?
+
+# 4-12 cancellationToken
+
+watch his tutorial, and learn how to use cancellationToken.
+For some use cases, maybe need long time to grab data from remote DB or processing data.  during the period. if the user who send the request cancel the request (close the browser or close the web page....), how the server react for this.
+
+I found a example of Runtime error while static compile time cannot find Error.  ILogger !   if you use ILogger without specify the type, use ILogger<>, the complier cannot detect this error. But Runtime will report error
