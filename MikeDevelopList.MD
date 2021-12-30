@@ -37,3 +37,6 @@ https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/in-ge
 
 does this article make sense: https://agirlamonggeeks.com/2019/05/29/vs-in-generic-interfaces-contravariance-vs-covariance-the-easier-part-1/
  
+# Mediator
+
+As in the BaseApiController, we have no way to inject the class, so that we use "httpContext" to access the Service 
