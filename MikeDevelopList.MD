@@ -51,3 +51,8 @@ Understand CQRS pattern !
 
 Each handler is either a Command or Query
 In the Controllor, we just "Send" a Query or Command, the Handler we defined will deal with for us
+
+# AUTOMAPPER
+
+1. about DI. for the automapper, we register it in the startup project APP, while we can inject it in all related libraries, such as Application project.
+2. 

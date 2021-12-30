@@ -37,6 +37,8 @@ namespace API
             // Either of the following approach works properly.
             services.AddMediatR(typeof(ListActivity.Handler).Assembly);
             //services.AddMediatR(typeof(Details.Handler).Assembly);   // works too
+
+            services.ConfigAutoMapper();  // in the Extension
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

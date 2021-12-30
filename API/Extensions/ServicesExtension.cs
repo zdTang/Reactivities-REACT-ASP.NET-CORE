@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Application.Core;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace API.Extensions
 {
@@ -15,6 +16,11 @@ namespace API.Extensions
                 .WithOrigins("http://localhost:3000")
                 );
             });
+        }
+
+        public static void ConfigAutoMapper(this IServiceCollection services)
+        {
+            services.AddAutoMapper(typeof(MappingProfiles).Assembly);
         }
     }
 }

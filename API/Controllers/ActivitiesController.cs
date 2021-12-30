@@ -35,6 +35,9 @@ namespace API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> EditActivity(Guid id, Activity activity)
         {
+            // activity is from Request's body, and id is not abvious come with it
+            // so that we need combine them together here.
+            // 4-8 Adding an Edit Handler
             activity.Id = id;
             return Ok(await Mediator.Send(new Edit.Command { Activity = activity }));
         }
