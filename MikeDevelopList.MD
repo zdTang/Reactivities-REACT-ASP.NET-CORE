@@ -55,4 +55,8 @@ In the Controllor, we just "Send" a Query or Command, the Handler we defined wil
 # AUTOMAPPER
 
 1. about DI. for the automapper, we register it in the startup project APP, while we can inject it in all related libraries, such as Application project.
-2. 
+
+
+# IServiceCollection 
+
+For those extension method, Is it necessary to return IServiceCollection ?

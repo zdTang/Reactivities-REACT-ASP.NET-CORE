@@ -5,7 +5,7 @@ namespace API.Extensions
 {
     public static class ServicesExtension
     {
-        public static void ConfigureCors(this IServiceCollection services)
+        public static IServiceCollection ConfigureCors(this IServiceCollection services)
         {
             services.AddCors(options =>
             {
@@ -16,11 +16,13 @@ namespace API.Extensions
                 .WithOrigins("http://localhost:3000")
                 );
             });
+            return services;  // return or not
         }
 
-        public static void ConfigAutoMapper(this IServiceCollection services)
+        public static IServiceCollection ConfigAutoMapper(this IServiceCollection services)
         {
             services.AddAutoMapper(typeof(MappingProfiles).Assembly);
+            return services;  // return or not
         }
     }
 }
