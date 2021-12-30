@@ -46,3 +46,8 @@ As in the BaseApiController, we have no way to inject the class, so that we use 
 Notice those Handler, some are "query", some are "Command"
 Mediator sometimes Send a Query, sometimes Send a Command
 Understand CQRS pattern !
+
+# 4-8 Add Edit hander
+
+Each handler is either a Command or Query
+In the Controllor, we just "Send" a Query or Command, the Handler we defined will deal with for us
