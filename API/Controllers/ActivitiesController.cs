@@ -24,11 +24,13 @@ namespace API.Controllers
         public async Task<ActionResult<Activity>> GetActivity(Guid id) 
         {
             var result= await Mediator.Send(new Details.Query{Id = id});
-            //if(result==null)
+            if(result.IsSuccess && result.Value!=null)
             //{ return NotFound(); }
-            return result;  
-            // as if we request a non-exist activity, it will return NULL
-            // we can check if it is Null here and then return an NotFound() or throw an Exception here.
+            return Ok(result.Value);
+            if (result.IsSuccess && result.Value == null)
+                return NotFound();
+            return BadRequest();
+            
         }
         
         [HttpPost]
