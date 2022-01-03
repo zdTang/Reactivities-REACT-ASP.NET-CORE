@@ -147,9 +147,10 @@ if we request a non-exist Activity, the Controllor cannot find the record and wi
 1. approach one: add code at Controller to validate result.
 2. Exception is a little heavy in data-flow, we should avoid using it. here, if we throw a exception and don't handle it, will crush the application.
 
-# 10-5 
+# 10-5 Handling API Error responses part 2
 
-Add Result class to wrap result for responding.
-1 Approach one. Handle it within Controllor
-3. 
+1, Add Result class to wrap result for responding.
+2 Approach one. Handle it within Controllor
+3,Move the Handle Result logic to the Base controllor--GOOD APPROACH
+ 
  
