@@ -130,3 +130,8 @@ concel button doesn't work, looks like the route is not correct.
 # 9-7 - Adding the activity filter component
 
 for the original calendar's style, it doesn't fit our output. so that we can find its style's class name, and create another same-name class style to overwritten partial of its original style, such as width.
+
+# 10-2  - Validation with data annotations
+
+add notion on the Domain is easy. the framework can valid it. for example, if we add [Required] on one field, the Framework will check it if we add a [webapi] attribute on our Controller. and we don't need to use state.valid().
+But this validate approach is not we want.
