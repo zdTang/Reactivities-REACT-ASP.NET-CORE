@@ -145,4 +145,6 @@ Be aware how to use fluentValidation to validate a batch of fields
 if we request a non-exist Activity, the Controllor cannot find the record and will return 204,  204 is not an Error.   for this scenario, what kind of infromation are we suppose to propmt?  
 
 1. approach one: add code at Controller to validate result.
+2. Exception is a little heavy in data-flow, we should avoid using it. here, if we throw a exception and don't handle it, will crush the application.
+3. 
  
