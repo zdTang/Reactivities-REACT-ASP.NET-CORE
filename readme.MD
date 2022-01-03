@@ -135,3 +135,14 @@ for the original calendar's style, it doesn't fit our output. so that we can fin
 
 add notion on the Domain is easy. the framework can valid it. for example, if we add [Required] on one field, the Framework will check it if we add a [webapi] attribute on our Controller. and we don't need to use state.valid().
 But this validate approach is not we want.
+
+
+# 10-3 
+
+Be aware how to use fluentValidation to validate a batch of fields
+
+# 10-4 null response
+if we request a non-exist Activity, the Controllor cannot find the record and will return 204,  204 is not an Error.   for this scenario, what kind of infromation are we suppose to propmt?  
+
+1. approach one: add code at Controller to validate result.
+ 
