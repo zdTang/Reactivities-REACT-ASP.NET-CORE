@@ -152,5 +152,10 @@ if we request a non-exist Activity, the Controllor cannot find the record and wi
 1, Add Result class to wrap result for responding.
 2 Approach one. Handle it within Controllor
 3,Move the Handle Result logic to the Base controllor--GOOD APPROACH
- 
+
+
+# 10-6
+The Create-Command, originally, it returns nothing. but we can let it return something.
+
+Debug what the Unit Represent?
  
