@@ -158,4 +158,10 @@ if we request a non-exist Activity, the Controllor cannot find the record and wi
 The Create-Command, originally, it returns nothing. but we can let it return something.
 
 Debug what the Unit Represent?
+
+# 10-8 - Handling exceptions
+
+1. Learn how to create a custom Middleware
+2. how to Serialize a class to JSON
+3, how to apply a customeMiddleware 
  
