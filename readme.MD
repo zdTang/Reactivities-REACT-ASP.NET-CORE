@@ -170,4 +170,12 @@ Debug what the Unit Represent?
 
 1. Install EntityFramework.identity package
 2. Add several fields ---will see the magic ..
+
+# 11-4 - Configuring Identity in the Startup class
+
+When VS import Package for you, be careful, it could be a wrong resource. 
+it could cause very tricky issue.
+
+1. Create Extension method.
+2. use Extension method to DI Identity and Authorization Services.
  
