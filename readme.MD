@@ -164,4 +164,10 @@ Debug what the Unit Represent?
 1. Learn how to create a custom Middleware
 2. how to Serialize a class to JSON
 3, how to apply a customeMiddleware 
+
+
+# 11-2 - Adding a user entity
+
+1. Install EntityFramework.identity package
+2. Add several fields ---will see the magic ..
  
