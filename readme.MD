@@ -166,12 +166,12 @@ Debug what the Unit Represent?
 3, how to apply a customeMiddleware 
 
 
-# 11-2 - Adding a user entity
+# 12-2 - Adding a user entity
 
 1. Install EntityFramework.identity package
 2. Add several fields ---will see the magic ..
 
-# 11-4 - Configuring Identity in the Startup class
+# 12-4 - Configuring Identity in the Startup class
 
 When VS import Package for you, be careful, it could be a wrong resource. 
 it could cause very tricky issue.
@@ -179,8 +179,15 @@ it could cause very tricky issue.
 1. Create Extension method.
 2. use Extension method to DI Identity and Authorization Services.
 
-# 11-5 - Adding seed users
+# 12-5 - Adding seed users
 
 Seeding + Migration
 The another Seeding solution is add logic on the Middleware, which one is better ?
+
+# 12 -7 - Adding an account controller
+what is Login?
+Login is a process when an User connect to a server with an ID, and the server granted the User some authority based on the ID. Usually, the user will offer the user a Token. 
+1. User tell Server, I am coming, and my name is ID....   
+2. Server validate ID, and give the User a Token(Base on the TD's group) ....
+3. User use the Token to make the sequential request.
  
