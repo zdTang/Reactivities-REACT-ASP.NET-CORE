@@ -213,5 +213,9 @@ Don't know how to use "Secret Manager"
 Here, we create and config authentication at middleware level.  
 For the first time user login, we should let him in and grant him a token.  then all other endpoints need this token as a ticket.
 
+How UserManager been injected?   it is injected by addIdentityCore().
+
+https://stackoverflow.com/questions/55361533/addidentity-vs-addidentitycore
+
 
  
