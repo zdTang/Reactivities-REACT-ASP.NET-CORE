@@ -178,4 +178,9 @@ it could cause very tricky issue.
 
 1. Create Extension method.
 2. use Extension method to DI Identity and Authorization Services.
+
+# 11-5 - Adding seed users
+
+Seeding + Migration
+The another Seeding solution is add logic on the Middleware, which one is better ?
  
