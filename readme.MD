@@ -190,4 +190,9 @@ Login is a process when an User connect to a server with an ID, and the server g
 1. User tell Server, I am coming, and my name is ID....   
 2. Server validate ID, and give the User a Token(Base on the TD's group) ....
 3. User use the Token to make the sequential request.
+
+
+# 12-8 
+what is Claim
+https://docs.microsoft.com/en-us/aspnet/core/security/authorization/claims?view=aspnetcore-6.0
  
