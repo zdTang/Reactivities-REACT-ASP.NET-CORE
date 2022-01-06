@@ -195,4 +195,10 @@ Login is a process when an User connect to a server with an ID, and the server g
 # 12-8 
 what is Claim
 https://docs.microsoft.com/en-us/aspnet/core/security/authorization/claims?view=aspnetcore-6.0
+what is JWT, How to decrypt it?
+https://jwt.io/
+
+AddAuthentication and UseAuthentication: https://pretagteam.com/question/what-exactly-is-useauthentication-for
+
+
  

@@ -50,7 +50,9 @@ namespace API
             app.UseRouting();
             
             app.UseCors("CorsPolicy");  // add middleware to specify the CORS policy we just created
-
+            
+            app.UseAuthentication();
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
