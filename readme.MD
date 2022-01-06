@@ -192,13 +192,21 @@ Login is a process when an User connect to a server with an ID, and the server g
 3. User use the Token to make the sequential request.
 
 
-# 12-8 
+# 12-8  Jwt
 what is Claim
 https://docs.microsoft.com/en-us/aspnet/core/security/authorization/claims?view=aspnetcore-6.0
 what is JWT, How to decrypt it?
 https://jwt.io/
 
 AddAuthentication and UseAuthentication: https://pretagteam.com/question/what-exactly-is-useauthentication-for
+
+
+# 12-11 - Storing secrets in development
+Secret Manager
+
+https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-6.0&tabs=windows
+
+Don't know how to use "Secret Manager"
 
 
  
