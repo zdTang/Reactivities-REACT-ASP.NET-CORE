@@ -1,12 +1,15 @@
 ﻿using API.DTOs;
 using API.Services;
 using Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace API.Controllers
 {
+    // this is the first time user access the Server, we should let him in.
+    [AllowAnonymous]
     [ApiController]
     [Route("api/[controller]")]
     public class AccountController:ControllerBase

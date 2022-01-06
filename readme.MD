@@ -208,5 +208,10 @@ https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcor
 
 Don't know how to use "Secret Manager"
 
+# 12-12 - Creating an auth policy
+
+Here, we create and config authentication at middleware level.  
+For the first time user login, we should let him in and grant him a token.  then all other endpoints need this token as a ticket.
+
 
  
