@@ -34,10 +34,10 @@ namespace API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateActivity(Activity activity)
         {
-            Console.WriteLine(activity);
-            Console.WriteLine(ModelState);
-            return Ok(await Mediator.Send(new Create.Command { Activity = activity }));
+            var result=await Mediator.Send(new Create.Command { Activity = activity });
+            return HandleResult(result);
         }
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> EditActivity(Guid id, Activity activity)
         {
@@ -50,7 +50,8 @@ namespace API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteActivity(Guid id)
         {
-            return Ok(await Mediator.Send(new Delete.Command { Id = id }));
+            var result=await Mediator.Send(new Delete.Command { Id = id });
+            return HandleResult(result);
         }
     }
 }

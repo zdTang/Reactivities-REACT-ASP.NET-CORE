@@ -16,11 +16,11 @@ namespace API.Controllers
         // Here, we cannot use DI in the constructor. so that we can use this approach
         protected IMediator Mediator => _mediator ??= HttpContext.RequestServices
             .GetService<IMediator>();
-            
+
         protected ActionResult HandleResult<T>(Result<T> result)
         {
+            if (result == null) return NotFound();// vs result.Value==null
             if (result.IsSuccess && result.Value != null)
-                //{ return NotFound(); }
                 return Ok(result.Value);
             if (result.IsSuccess && result.Value == null)
                 return NotFound();
