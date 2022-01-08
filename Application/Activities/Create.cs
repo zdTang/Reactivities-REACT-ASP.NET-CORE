@@ -17,14 +17,18 @@ namespace Application.Activities
         /*================
         Here demo how to create Validator
         "Activity" is the type we want to validate
+        // To be aware, the "Command" TYPE is upside.
+        // Even comment out the following code, we can still validate
+        // if we have defined a validate Class
         ==================*/
-        public class CommandValidator : AbstractValidator<Activity>
-        {
-            public CommandValidator()
-            {
-                RuleFor(x=>x.Title).NotEmpty();
-            }
-        }
+        // public class CommandValidator : AbstractValidator<Command>
+        // {
+        //     public CommandValidator()
+        //     {
+        //          // Notice the format
+        //          RuleFor(x=>x.Activity).SetValidator(new ActivityValidator());
+        //     }
+        // }
 
         public class Handler : IRequestHandler<Command>
         {
