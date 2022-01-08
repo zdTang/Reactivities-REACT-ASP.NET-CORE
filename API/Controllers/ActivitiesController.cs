@@ -1,11 +1,7 @@
 ﻿using Application.Activities;
 using Application.Core;
 using Domain;
-using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Persistence;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -20,24 +16,19 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Activity>>> GetActivities(CancellationToken ct)
         {
-            return await Mediator.Send(new ListActivity.Query(),ct);
+            return await Mediator.Send(new ListActivity.Query(), ct);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Result<Activity>>> GetActivity(Guid id)
         {
-             var result =await Mediator.Send(new Details.Query { Id = id });
-             // when return a NULL, It will be a 204 Response, which means successful
-             // if We want sent the Client a different Info, we can customize the respond
-             //return result;   // Server can return the Result Object directly
-             // Here has a question.  who will tell it is Success or FAIL ?
-            if(result.IsSuccess && result.Value!=null)
-            return Ok(result.Value);
-            if (result.IsSuccess && result.Value == null)
-                return NotFound();
-            return BadRequest();
-             
-          }
+            var result = await Mediator.Send(new Details.Query { Id = id });
+            // when return a NULL, It will be a 204 Response, which means successful
+            // if We want sent the Client a different Info, we can customize the respond
+            // Here has a question.  who will tell it is Success or FAIL ?
+            return HandleResult(result);
+
+        }
 
         [HttpPost]
         public async Task<IActionResult> CreateActivity(Activity activity)
