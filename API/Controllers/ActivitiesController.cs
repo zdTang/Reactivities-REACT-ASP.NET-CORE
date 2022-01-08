@@ -16,7 +16,7 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Activity>>> GetActivities(CancellationToken ct)
         {
-            var result=await Mediator.Send(new ListActivity.Query(), ct);
+            var result = await Mediator.Send(new ListActivity.Query(), ct);
             return HandleResult(result);
         }
 
@@ -34,10 +34,10 @@ namespace API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateActivity(Activity activity)
         {
-            var result=await Mediator.Send(new Create.Command { Activity = activity });
+            var result = await Mediator.Send(new Create.Command { Activity = activity });
             return HandleResult(result);
         }
-        
+
         [HttpPut("{id}")]
         public async Task<IActionResult> EditActivity(Guid id, Activity activity)
         {
@@ -45,12 +45,13 @@ namespace API.Controllers
             // so that we need combine them together here.
             // 4-8 Adding an Edit Handler
             activity.Id = id;
-            return Ok(await Mediator.Send(new Edit.Command { Activity = activity }));
+            var result = await Mediator.Send(new Edit.Command { Activity = activity });
+            return HandleResult(result);
         }
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteActivity(Guid id)
         {
-            var result=await Mediator.Send(new Delete.Command { Id = id });
+            var result = await Mediator.Send(new Delete.Command { Id = id });
             return HandleResult(result);
         }
     }
