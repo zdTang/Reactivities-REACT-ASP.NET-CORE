@@ -1,5 +1,6 @@
 using API.Extensions;
 using Application.Activities;
+using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,7 +27,11 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+             services.AddControllers().AddFluentValidation(Config =>
+            {
+                Config.RegisterValidatorsFromAssemblyContaining<Create>(); // tell him which Assembly is it.
+            });
+            
             services.AddDbContext<DataContext>(opt => {
                 opt.UseSqlite(_configuration.GetConnectionString("DefaultConnection"));
             });

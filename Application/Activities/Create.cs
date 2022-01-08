@@ -1,4 +1,5 @@
 ﻿using Domain;
+using FluentValidation;
 using MediatR;
 using Persistence;
 using System.Threading;
@@ -8,9 +9,21 @@ namespace Application.Activities
 {
     public class Create
     {
+        // the property of "command" is what we want to validate
         public class Command : IRequest
         {
             public Activity Activity { get; set; }
+        }
+        /*================
+        Here demo how to create Validator
+        "Activity" is the type we want to validate
+        ==================*/
+        public class CommandValidator : AbstractValidator<Activity>
+        {
+            public CommandValidator()
+            {
+                RuleFor(x=>x.Title).NotEmpty();
+            }
         }
 
         public class Handler : IRequestHandler<Command>
