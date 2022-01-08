@@ -16,7 +16,8 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Activity>>> GetActivities(CancellationToken ct)
         {
-            return await Mediator.Send(new ListActivity.Query(), ct);
+            var result=await Mediator.Send(new ListActivity.Query(), ct);
+            return HandleResult(result);
         }
 
         [HttpGet("{id}")]
