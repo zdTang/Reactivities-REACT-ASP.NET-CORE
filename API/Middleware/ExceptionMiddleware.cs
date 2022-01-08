@@ -27,7 +27,7 @@ namespace API.Middleware
         {
             try
             {
-                await _next(context);
+                await _next(context);  //Call the next delegate/middleware in the pipeline.
             }
             catch (Exception ex)
             {

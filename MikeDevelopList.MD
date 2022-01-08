@@ -67,3 +67,17 @@ watch his tutorial, and learn how to use cancellationToken.
 For some use cases, maybe need long time to grab data from remote DB or processing data.  during the period. if the user who send the request cancel the request (close the browser or close the web page....), how the server react for this.
 
 I found a example of Runtime error while static compile time cannot find Error.  ILogger !   if you use ILogger without specify the type, use ILogger<>, the complier cannot detect this error. But Runtime will report error
+
+# 10-8  Validation summary
+
+1, use custome Middleware to handle Exception  
+https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/write?view=aspnetcore-6.0  
+2, validate coming Quest:  happens during the Model-binding  
+  a. FluentValidation // https://fluentvalidation.net/  
+  b. Data Model Notation
+3, validate Response: we can customize the reponse Information based on our requirement:   
+  For CURD, for Get, Update, Edit operations, the framework need find the specified Activity within the database, if no found, by default, the Framework will return null and it is a 204.   But we can change it and return NotFound() 
+
+4. Handle response, we should know all possible return value and dicide what kind of data we will tell the client. we as developer will define how to  return status.I think we can also work with the front end. to send a detailed  information to them. for example, if we want find specified Activity, if not find ,we can return NULL 204, We can also return NotFound. we can create a Response Class to standardize the return object. 
+
+
