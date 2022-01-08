@@ -25,7 +25,14 @@ namespace API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Activity>> GetActivity(Guid id)
         {
-            return await Mediator.Send(new Details.Query { Id = id });
+             var result =await Mediator.Send(new Details.Query { Id = id });
+             // when return a NULL, It will be a 204 Response, which means successful
+             // if We want sent the Client a different Info, we can customize the respond
+             if(result ==null) 
+             {
+                 return NotFound();
+             };
+             return result;
         }
 
         [HttpPost]
