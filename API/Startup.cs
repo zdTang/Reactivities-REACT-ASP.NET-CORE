@@ -22,18 +22,19 @@ namespace API
             _configuration = configuration;
         }
 
-      
+
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
 
-             services.AddControllers().AddFluentValidation(Config =>
+            services.AddControllers().AddFluentValidation(Config =>
+           {
+               Config.RegisterValidatorsFromAssemblyContaining<Create>(); // tell him which Assembly is it.
+           });
+
+            services.AddDbContext<DataContext>(opt =>
             {
-                Config.RegisterValidatorsFromAssemblyContaining<Create>(); // tell him which Assembly is it.
-            });
-            
-            services.AddDbContext<DataContext>(opt => {
                 opt.UseSqlite(_configuration.GetConnectionString("DefaultConnection"));
             });
             services.ConfigureCors();
@@ -54,7 +55,7 @@ namespace API
             app.UseMiddleware<ExceptionMiddleware>();
             if (env.IsDevelopment())
             {
-                //app.UseDeveloperExceptionPage();
+                app.UseDeveloperExceptionPage();
                 //app.UseSwagger(); // ASP.NET CORE uses Swagger to debug its API ??
                 //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
             }
