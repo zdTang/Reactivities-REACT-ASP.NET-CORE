@@ -5,6 +5,7 @@ using Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
@@ -22,7 +23,7 @@ namespace API.Controllers
         public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, TokenService tokenService)
         {
             _signInManager = signInManager;
-            _userManager = userManager;
+            _userManager = userManager;    // been injected by useIdentityCore() in the Startup.cs
             _tokenService = tokenService;
         }
         [HttpPost("login")]
@@ -43,6 +44,43 @@ namespace API.Controllers
             }
 
             return Unauthorized();
+        }
+
+        [HttpPost("register")]
+        public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
+        {
+            // if Email been occupied
+            if (await _userManager.Users.AnyAsync(x => x.Email == registerDto.Email))
+            {
+                return BadRequest("Email taken");  //400 Bad Request
+            }
+
+            // if User name has bee occupied
+            if (await _userManager.Users.AnyAsync(x => x.UserName == registerDto.Username))
+            {
+                return BadRequest("User taken");   //400 Bad Request
+            }
+            // create a new AppUser with data from Client
+            var user = new AppUser
+            {
+                DisplayName = registerDto.DisplayName,    // this one is no different
+                Email = registerDto.Email,
+                UserName = registerDto.Username
+            };
+            // use userManager to create new User
+            var result = await _userManager.CreateAsync(user, registerDto.Password);
+            if (result.Succeeded)
+            {
+                return new UserDto
+                {
+                    DisplayName = user.DisplayName,
+                    Image = null,
+                    Token = _tokenService.CreateToken(user),
+                    UserName = user.UserName
+                };
+            }
+            return BadRequest("Problem registering user");
+
         }
 
     }
