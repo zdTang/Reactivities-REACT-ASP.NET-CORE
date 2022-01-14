@@ -2,12 +2,15 @@ using System.Threading.Tasks;
 using API.DTOs;
 using API.Services;
 using Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-
+    // As we configure Authorization with the filter ( middleware level), request to each endpoint need to be validate
+    // except we have a [AllowAnonymous] attribute
+    [AllowAnonymous]
     [ApiController]
     [Route("api/[controller]")]
     public class AccountController : ControllerBase

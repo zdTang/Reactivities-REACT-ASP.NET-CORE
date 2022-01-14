@@ -21,7 +21,7 @@ namespace API.Controllers
             return HandleResult(result);
         }
 
-        [Authorize]
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Result<Activity>>> GetActivity(Guid id)
         {

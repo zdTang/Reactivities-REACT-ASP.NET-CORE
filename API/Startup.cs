@@ -3,6 +3,7 @@ using API.Middleware;
 using Application.Activities;
 using FluentValidation.AspNetCore;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Persistence;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace API
 {
@@ -27,8 +29,13 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddControllers().AddFluentValidation(Config =>
+            // add the Authorize policy into the Controllor services
+            services.AddControllers(opt => {
+                // By adding here other then on specified Action or Controller
+                // We create the rule that each request need to be authorized until it use [AllowAnonymous]
+                var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();  // Create a new policy
+                opt.Filters.Add(new AuthorizeFilter(policy));                                      // add New Filter !!!
+            }).AddFluentValidation(Config =>
            {
                Config.RegisterValidatorsFromAssemblyContaining<Create>(); // tell him which Assembly is it.
            });
