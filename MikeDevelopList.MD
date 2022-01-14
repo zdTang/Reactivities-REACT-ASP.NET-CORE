@@ -81,3 +81,14 @@ https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/write?view=
 4. Handle response, we should know all possible return value and dicide what kind of data we will tell the client. we as developer will define how to  return status.I think we can also work with the front end. to send a detailed  information to them. for example, if we want find specified Activity, if not find ,we can return NULL 204, We can also return NotFound. we can create a Response Class to standardize the return object. 
 
 
+
+# 12-7 - Adding an account controller
+
+Where is the userManager come from? I didn't inject it.
+Actually, when we use AddIdentityCore() method, this method has injected 
+the service automatically.
+
+1. Understand how to inject SignInManager, userManager
+2, be familiar with how to check userEmail and varify password with userManager, signInManager
+3, if we successed, then we will generate a TOKEN and return it to user.
+

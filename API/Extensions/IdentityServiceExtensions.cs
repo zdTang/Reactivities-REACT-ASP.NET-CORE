@@ -8,7 +8,11 @@ namespace API.Extensions
 {
     public static class IdentityServiceExtensions
     {
-        public static IServiceCollection AddIdentityServices(this IServiceCollection services, IConfiguration configuration){
+        public static IServiceCollection AddIdentityServices(this IServiceCollection services, IConfiguration configuration)
+        {
+            // this "AddIentityCore" will inject a bunch of services into ServicesCollection
+            // such as "userManager"
+            // https://stackoverflow.com/questions/55361533/addidentity-vs-addidentitycore
             services.AddIdentityCore<AppUser>(opt =>
            {
                opt.Password.RequireNonAlphanumeric = false;
@@ -19,8 +23,8 @@ namespace API.Extensions
             services.AddAuthentication();
             return services;
         }
-        
-        
-        
+
+
+
     }
 }
