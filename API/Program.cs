@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Domain;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -20,14 +22,15 @@ namespace API
              * do database update each time
              =============================*/
             using var scope = Host.Services.CreateScope();
-            var services = scope.ServiceProvider;
+            var services = scope.ServiceProvider;             // get services
             try
             {
                 // check if can create a Db initializer like "aspNetCore Rocky project"
                 var context = services.GetRequiredService<DataContext>();
+                var userManager = services.GetRequiredService<UserManager<AppUser>>();
                 //context.Database.Migrate();
                 await context.Database.MigrateAsync();
-                await Seed.SeedData(context);
+                await Seed.SeedData(context, userManager);  // Seeding as well 
             }
             catch (Exception ex)
             {

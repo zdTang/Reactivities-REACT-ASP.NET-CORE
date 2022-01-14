@@ -46,6 +46,9 @@ namespace API
             //services.AddMediatR(typeof(Details.Handler).Assembly);   // works too
 
             services.ConfigAutoMapper();  // in the Extension
+
+            services.AddIdentityServices(_configuration);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,11 +56,10 @@ namespace API
         {
             // Be aware this ExceptionMiddleware has been put at the first layer!
             app.UseMiddleware<ExceptionMiddleware>();
+
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
-                //app.UseSwagger(); // ASP.NET CORE uses Swagger to debug its API ??
-                //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
+                // app.UseDeveloperExceptionPage();
             }
 
             app.UseHttpsRedirection();
