@@ -1,21 +1,26 @@
 using System.Threading.Tasks;
 using API.DTOs;
+using API.Services;
 using Domain;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API.Controllers{
-    
+namespace API.Controllers
+{
+
     [ApiController]
     [Route("api/[controller]")]
-    public class AccountController : ControllerBase{
+    public class AccountController : ControllerBase
+    {
 
         private readonly SignInManager<AppUser> _signInManager;
         private readonly UserManager<AppUser> _userManager;
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        private readonly TokenService _tokenService;
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, TokenService tokenService)
         {
             _signInManager = signInManager;
             _userManager = userManager;
+            _tokenService = tokenService;
         }
         [HttpPost("login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
@@ -29,21 +34,21 @@ namespace API.Controllers{
                 {
                     DisplayName = user.DisplayName,
                     Image = null,
-                    Token = "This will be a token",
+                    Token = _tokenService.CreateToken(user),
                     UserName = user.UserName,
                 };
             }
 
             return Unauthorized();
         }
-        
+
     }
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
 }

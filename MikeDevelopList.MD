@@ -92,3 +92,7 @@ the service automatically.
 2, be familiar with how to check userEmail and varify password with userManager, signInManager
 3, if we successed, then we will generate a TOKEN and return it to user.
 
+# 12-8  JWT
+
+https://www.youtube.com/watch?v=7Q17ubqLfaM
+
