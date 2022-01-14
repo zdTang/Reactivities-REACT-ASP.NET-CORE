@@ -1,6 +1,7 @@
 ﻿using Application.Activities;
 using Application.Core;
 using Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace API.Controllers
             return HandleResult(result);
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Result<Activity>>> GetActivity(Guid id)
         {
@@ -30,7 +32,8 @@ namespace API.Controllers
             return HandleResult(result);
 
         }
-
+        
+     
         [HttpPost]
         public async Task<IActionResult> CreateActivity(Activity activity)
         {
